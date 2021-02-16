@@ -192,17 +192,13 @@ layout: default
 	}
 </style>
 {% endif %}
-<div id="gitmentContainer"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-    owner: 'jacklv999',
-    repo: 'jacklv999.github.io',
-    oauth: {
-        client_id: '21df74596fb3ea581b20',
-        client_secret: '7fef73d816695d4507d05fa8b60855c73b3d3f44',
-    },
-});
-gitment.render('gitmentContainer');
-</script>
+<form method="POST" action="https://api.staticman.net/v3/entry/github/eduardoboucas/staticman/gh-pages/comments">
+  <input name="options[redirect]" type="hidden" value="https://my-site.com">
+  <!-- e.g. "2016-01-02-this-is-a-post" -->
+  <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+  <label><input name="fields[name]" type="text">Name</label>
+  <label><input name="fields[email]" type="email">E-mail</label>
+  <label><textarea name="fields[message]"></textarea>Message</label>
+  
+  <button type="submit">Go!</button>
+</form>
