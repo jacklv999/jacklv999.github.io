@@ -59,3 +59,31 @@ header-img: "img/home-bg-o.jpg"
 		</div>
 	</div>
 </div>
+
+
+
+  <!-- Vssue 的样式文件 -->
+  <link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+  <div id="vssue"></div>
+  <!-- Vue 运行时版 (runtime only)  -->
+  <script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+  <!-- Vssue Github 版  -->
+  <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+
+
+  <script>
+    new Vue({
+      el: '#vssue',
+      render: h => h('Vssue', {
+        props: {
+          title: 'Vssue Dev',
+          options: {
+            owner: 'jacklv999',
+            repo: 'jacklv999.github.io',
+            clientId: '56455265c2b3a590589e',
+            clientSecret: 'a969c7072df4d44713bee59b74daa5b235973e1a', // 只有在使用某些平台时需要
+          },
+        }
+      })
+    })
+  </script>
